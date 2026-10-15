@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Student - SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <h2>SkillConnect</h2>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Explore Skills</a>
+            <a href="index.html#students">Students</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="form-box">
+        <h2>Contact a Student</h2>
+        <p>Send a message to connect with another student.</p>
+
+        <form id="contactForm">
+            <label for="senderName">Your Name</label>
+            <input type="text" id="senderName"
+                   placeholder="Enter your name" required>
+
+            <label for="senderEmail">Your Email</label>
+            <input type="email" id="senderEmail"
+                   placeholder="Enter your email" required>
+
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName"
+                   placeholder="Enter student name" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message"
+                      placeholder="Write your message"
+                      rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p><a href="index.html">Back to Home</a></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Skill Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+fetch("http://localhost:5000")
+  .then(response => response.text())
+  .then(data => {
+    console.log("Backend Response:", data);
+  })
+  .catch(error => {
+    console.error("Connection Error:", error);
+  });
+</script>
+</body>
+
+<body>
+
+  <nav>
+    <h2>SkillConnect</h2>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Explore Skills</a>
+      <a href = "#students">Students</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Join Us</a>
+      <a href="profile.html">Profile</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Discover Skills. Share Talent.</h1>
+    <p>
+      Connect with talented students,
+      learn new skills and showcase your work.
+    </p>
+
+    <input id="search" type="text"
+      placeholder="Search skills...">
+
+    <button onclick="searchSkills()">
+      Explore Skills
+    </button>
+  </section>
+
+  <section class="categories">
+    <h2>Popular Skills</h2>
+
+    <div class="cards">
+      <div class="card">💻<h3>Web Development</h3></div>
+      <div class="card">🎨<h3>Graphic Design</h3></div>
+      <div class="card">📱<h3>App Development</h3></div>
+      <div class="card">🎬<h3>Video Editing</h3></div>
+    </div>
+  </section>
+
+  <section id="students" class="categories">
+    <h2>Our Students</h2>
+    <p>Find students and explore their skills.</p>
+
+    <input
+      type="text"
+      id="studentSearch"
+      placeholder="Search by student name or skill..."
+    >
+
+    <p id="studentNoResults" style="display: none;">
+      No students found.
+    </p>
+
+    <div class="cards" id="studentList">
+
+      <div class="card student-card">
+        <h3>Diksha</h3>
+        <p>Skills: HTML, CSS, Web Development</p>
+        <button onclick="contactStudent('Diksha')">
+          Contact
+        </button>
+      </div>
+
+      <div class="card student-card">
+        <h3>Rahul</h3>
+        <p>Skills: C++, Python, Programming</p>
+        <button onclick="contactStudent('Rahul')">
+          Contact
+        </button>
+      </div>
+
+      <div class="card student-card">
+        <h3>Priya</h3>
+        <p>Skills: Graphic Design, UI/UX</p>
+        <button onclick="contactStudent('Priya')">
+          Contact
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 SkillConnect | Student Skill Marketplace</p>
+  </footer>
+
+  <script src="script.js"></script>
+  
+<h2>Student Marketplace Products</h2>
+
+<div id="products"></div>
+
+<script>
+fetch("http://localhost:5000/api/products")
+  .then(response => response.json())
+  .then(products => {
+    const container = document.getElementById("products");
+
+    container.innerHTML = products.map(product => `
+      <div class="product-card">
+        <h3>${product.name}</h3>
+        <p>Category: ${product.category}</p>
+        <p>Price: ₹${product.price}</p>
+      </div>
+    `).join("");
+  })
+  .catch(error => {
+    console.error("Products load error:", error);
+  });
+</script>
+</body>
+
+</body>
+</html>

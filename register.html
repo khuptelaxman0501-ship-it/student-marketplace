@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>SkillConnect</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<main class="section">
+    <form id="registerForm" class="form-box">
+        <h2>Student Registration</h2>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="college">College Name</label>
+        <input type="text" id="college" required>
+
+        <label for="skill">Your Skills</label>
+        <input type="text" id="skill"
+               placeholder="HTML, CSS, C++" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password"
+               minlength="8" required>
+
+        <button type="submit">Register</button>
+
+        <p>Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+        <p id="message"></p>
+    </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

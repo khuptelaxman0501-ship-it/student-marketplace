@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Skills - Student Skill Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Skill Marketplace</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="profile.html">Profile</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section class="skills-page">
+        <h2>Explore Student Skills</h2>
+        <p>Discover skills and learn what students can offer.</p>
+        
+<input
+    type="text"
+    id="skillSearch"
+    placeholder="Search skills... (HTML, CSS, Python)"
+>
+
+
+        <div class="skill-list">
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Learn to create the structure of websites.</p>
+                <button onclick="showSkill('HTML')">Explore</button>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Learn to style and design websites.</p>
+                <button onclick="showSkill('CSS')">Explore</button>
+            </div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Make websites interactive and dynamic.</p>
+                <button onclick="showSkill('JavaScript')">Explore</button>
+            </div>
+
+            <div class="skill-card">
+                <h3>C++</h3>
+                <p>Learn programming and problem solving.</p>
+                <button onclick="showSkill('C++')">Explore</button>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Explore programming, automation and AI.</p>
+                <button onclick="showSkill('Python')">Explore</button>
+            </div>
+
+            <div class="skill-card">
+                <h3>Graphic Design</h3>
+                <p>Create attractive graphics and designs.</p>
+                <button onclick="showSkill('Graphic Design')">Explore</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Student Skill Marketplace</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
