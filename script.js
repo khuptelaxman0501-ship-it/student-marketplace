@@ -135,3 +135,19 @@ if (contactForm) {
     });
 }
 
+const API_URL = "https://student-marketplace-mocha.vercel.app/api/products";
+
+fetch(API_URL)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Failed to load products");
+    }
+    return response.json();
+  })
+  .then(products => {
+    console.log("Products from backend:", products);
+  })
+  .catch(error => {
+    console.error("Backend error:", error);
+  });
+
