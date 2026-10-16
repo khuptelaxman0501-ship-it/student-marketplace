@@ -18,7 +18,7 @@ fetch("http://localhost:5000")
     console.error("Connection Error:", error);
   });
 </script>
-</body>
+
 
 <body>
 
@@ -132,7 +132,12 @@ fetch("http://localhost:5000/api/products")
     console.error("Products load error:", error);
   });
 </script>
-</body>
+<section class="section">
+    <h2>Available Products</h2>
+    <div id="products-container">
+        Loading products...
+    </div>
+</section>
 
 </body>
 </html>

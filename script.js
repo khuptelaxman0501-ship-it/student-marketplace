@@ -149,19 +149,39 @@ if (contactForm) {
     });
 }
 
+
 const API_URL = "https://student-marketplace-mocha.vercel.app/api/products";
 
-fetch(API_URL)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("Failed to load products");
-    }
-    return response.json();
-  })
-  .then(products => {
-    console.log("Products from backend:", products);
-  })
-  .catch(error => {
-    console.error("Backend error:", error);
-  });
+const productsContainer = document.getElementById("products-container");
+
+if (productsContainer) {
+    fetch(API_URL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load products");
+            }
+            return response.json();
+        })
+        .then(products => {
+            productsContainer.innerHTML = "";
+
+            products.forEach(product => {
+                const item = document.createElement("div");
+                item.className = "product-card";
+
+                item.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p>Category: ${product.category}</p>
+                    <p>Price: ₹${product.price}</p>
+                `;
+
+                productsContainer.appendChild(item);
+            });
+        })
+        .catch(error => {
+            productsContainer.textContent = "Products load झाले नाहीत. पुन्हा प्रयत्न करा.";
+            console.error("Products error:", error);
+        });
+}
+
 
