@@ -36,17 +36,27 @@ if (registerForm) {
     });
 }
 
+
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        document.getElementById("loginMessage").textContent =
-            "Login page is ready. Real login requires a backend.";
-    });
+        const email = document.getElementById("loginEmail").value.trim();
+        const password = document.getElementById("loginPassword").value;
+        const message = document.getElementById("loginMessage");
 
+        if (email === "student@example.com" && password === "Student123") {
+            message.textContent = "Login successful! Welcome to Student Marketplace.";
+            message.style.color = "green";
+        } else {
+            message.textContent = "Invalid email or password. Please try again.";
+            message.style.color = "red";
+        }
+    });
 }
+
 
 function showSkill(skillName) {
     alert("You selected: " + skillName);
