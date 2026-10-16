@@ -184,4 +184,10 @@ if (productsContainer) {
         });
 }
 
+console.log("Products script loaded");
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Page loaded, checking products container:",
+        document.getElementById("products-container"));
+});
 
