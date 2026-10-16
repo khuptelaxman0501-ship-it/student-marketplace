@@ -49,10 +49,11 @@ if (loginForm) {
 
         if (email === "student@example.com" && password === "Student123") {
             message.textContent = "Login successful! Welcome to Student Marketplace.";
-            setTimeout(() => {
+            message.style.color = "green";
+            setTimeout( function() {
     window.location.href = "index.html";
 }, 1500);
-            message.style.color = "green";
+            
         } else {
             message.textContent = "Invalid email or password. Please try again.";
             message.style.color = "red";
